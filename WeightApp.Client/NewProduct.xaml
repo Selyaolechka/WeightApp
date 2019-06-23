@@ -1,0 +1,32 @@
+﻿<Window x:Class="WeightApp.Client.NewProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WeightApp.Client"
+        mc:Ignorable="d"
+        Name="NewProductWindow"
+        xmlns:vm="clr-namespace:WeightApp.Client.ViewModels"
+        Title="Add New Product" Height="310.342" Width="200">
+    <Window.DataContext>
+        <vm:ProductViewModel></vm:ProductViewModel>
+    </Window.DataContext>
+    <StackPanel>
+        <TextBlock Text="Name:"></TextBlock>
+        <TextBox Text="{Binding Name}"></TextBox>
+        <TextBlock Text="Category:"></TextBlock>
+        <ComboBox ItemsSource="{Binding Categories}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedCategory}"></ComboBox>
+        <TextBlock Text="Calories:"></TextBlock>
+        <TextBox Text="{Binding Calories}"></TextBox>
+        <TextBlock Text="Carbohydrates:"></TextBlock>
+        <TextBox Text="{Binding Carbohydrates}"></TextBox>
+        <TextBlock Text="Proteins:"></TextBlock>
+        <TextBox Text="{Binding Proteins}"></TextBox>
+        <TextBlock Text="Fats:"></TextBlock>
+        <TextBox Text="{Binding Fats}"></TextBox>
+        <WrapPanel HorizontalAlignment="Right">
+            <Button Content="Add" Command="{Binding AddNewProduct}" CommandParameter="{Binding ElementName=NewProductWindow}"></Button>
+            <Button Content="Cancel" Command="{Binding Cancel}" CommandParameter="{Binding ElementName=NewProductWindow}"></Button>
+        </WrapPanel>
+    </StackPanel>
+</Window>

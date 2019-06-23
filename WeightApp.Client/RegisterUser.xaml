@@ -1,0 +1,25 @@
+﻿<Window x:Class="WeightApp.Client.RegisterUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WeightApp.Client"
+        mc:Ignorable="d"
+        Title="User Profile" Height="270.4" Width="300">
+    <StackPanel>
+        <TextBlock Text="Name"/>
+        <TextBox Text="Sample User"></TextBox>
+        <TextBlock Text="Email"/>
+        <TextBox Text="user@example.com"></TextBox>
+        <TextBlock Text="Password"/>
+        <TextBox Text="******"/>
+        <TextBlock Text="Confirm Password"/>
+        <TextBox Text="******"/>
+        <TextBlock Text="Date Of Birth"/>
+        <DatePicker></DatePicker>
+        <WrapPanel HorizontalAlignment="Right">
+            <Button Content="OK"></Button>
+            <Button Content="Cancel"></Button>
+        </WrapPanel>
+    </StackPanel>
+</Window>

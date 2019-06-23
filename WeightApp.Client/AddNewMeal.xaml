@@ -1,0 +1,28 @@
+﻿<Window x:Class="WeightApp.Client.AddNewMeal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WeightApp.Client"
+        mc:Ignorable="d"
+        Name="NewMealWindow"
+        xmlns:vm="clr-namespace:WeightApp.Client.ViewModels"
+        Title="AddNewMeal" Height="217.334" Width="310">
+    <Window.DataContext>
+        <vm:AddMealViewModel></vm:AddMealViewModel>
+    </Window.DataContext>
+    <StackPanel>
+        <TextBlock Text="Meal Type:"></TextBlock>
+        <ComboBox ItemsSource="{Binding MealTypes}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedMealType}"></ComboBox>
+        <TextBlock Text="Product:"></TextBlock>
+        <ComboBox ItemsSource="{Binding Products}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedProduct}"></ComboBox>
+        <TextBlock Text="Amount:"></TextBlock>
+        <TextBox Text="{Binding Amount}"></TextBox>
+        <TextBlock Text="Date:"></TextBlock>
+        <DatePicker SelectedDate="{Binding Date}"></DatePicker>
+        <WrapPanel HorizontalAlignment="Right">
+            <Button Content="Add" Command="{Binding AddMeal}" CommandParameter="{Binding ElementName=NewMealWindow}"></Button>
+            <Button Content="Cancel" Command="{Binding Cancel}" CommandParameter="{Binding ElementName=NewMealWindow}"></Button>
+        </WrapPanel>
+    </StackPanel>
+</Window>

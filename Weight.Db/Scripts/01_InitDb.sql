@@ -1,0 +1,5 @@
+IF DB_ID (N'WeightApp') IS NOT NULL
+    DROP DATABASE WeightApp
+GO
+CREATE DATABASE WeightApp
+GO
